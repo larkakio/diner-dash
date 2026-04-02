@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --neon-cyan: #00fff0;
+  --neon-magenta: #ff00dd;
+  --neon-lime: #b7ff00;
+  --void: #050508;
+}
+
+@theme inline {
+  --font-sans: var(--font-ui);
+  --font-mono: ui-monospace, monospace;
+}
+
+body {
+  background: radial-gradient(ellipse 120% 80% at 50% -20%, #1a1038 0%, var(--void) 55%);
+  color: #f0f4ff;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 240, 0.02) 2px,
+    rgba(0, 255, 240, 0.02) 4px
+  );
+}
