@@ -11,7 +11,7 @@ export function getCheckInDataSuffix(): Hex | undefined {
   if (hexOverride?.startsWith("0x") && hexOverride.length > 2) {
     return hexOverride as Hex;
   }
-  const code = process.env.NEXT_PUBLIC_BUILDER_CODE?.trim();
-  if (!code) return undefined;
+  const code =
+    process.env.NEXT_PUBLIC_BUILDER_CODE?.trim() || "bc_w16c73rc";
   return Attribution.toDataSuffix({ codes: [code] });
 }
