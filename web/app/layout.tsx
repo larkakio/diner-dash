@@ -15,7 +15,9 @@ const rajdhani = Rajdhani({
   weight: ["400", "500", "600", "700"],
 });
 
-const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "";
+/** Base.dev app id — public; used for `<meta name="base:app_id" />` verification. */
+const baseAppId =
+  process.env.NEXT_PUBLIC_BASE_APP_ID ?? "69ce21642cecb99f8ef27a57";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://diner-dash-rho.vercel.app";
 
@@ -33,11 +35,9 @@ export const metadata: Metadata = {
     description: "Swipe the floor. Serve the future. Base.",
     images: [{ url: "/app-thumbnail.jpg", width: 1200, height: 628 }],
   },
-  other: baseAppId
-    ? {
-        "base:app_id": baseAppId,
-      }
-    : {},
+  other: {
+    "base:app_id": baseAppId,
+  },
 };
 
 export const viewport: Viewport = {
